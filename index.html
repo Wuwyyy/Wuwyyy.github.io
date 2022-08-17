@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>KyutoZx ft Ike Wuwyyy</title>
+  <link rel="stylesheet" media="screen" href="css/style.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script>
+  var count_particles, stats, update;
+  stats = new Stats;
+  stats.setMode(0);
+  stats.domElement.style.position = 'absolute';
+  stats.domElement.style.left = '0px';
+  stats.domElement.style.top = '0px';
+  document.body.appendChild(stats.domElement);
+  count_particles = document.querySelector('.js-count-particles');
+  update = function() {
+    stats.begin();
+    stats.end();
+    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+      count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+    }
+    requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+</script>
+</head>
+      <body onload="startTime()">
+
+      <div class="bulat">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="tnggl" id="tanggal"></div>
+      <div class="acra" id="acara"></div>
+      <div class="jam" id="time"></div>
+      <div class="ucapan" id="quote"></div>
+
+<!-- particles.js container -->
+<div id="particles-js"></div>
+
+<!-- scripts -->
+<script src="particles.js"></script>
+<script src="js/app.js"></script>
+
+<script type="text/javascript">
+      auto=true;
+      cek=false;
+      function debug(){
+        console.log('debug');
+      }
+
+      var txt = 'P atheis';
+      var txt2 = 'txt';
+
+      function checkTime(i) {
+        if (i < 10) {
+            i = "0" + i;
+          }
+        return i;
+        }
+      var H;
+      var M;
+      var S;
+      var starting=true;
+      function startTime() {
+        
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+
+        H=h;
+        M=m;
+        S=s;
+
+        var hari = new Array(7);
+        hari[0] = "Minggu";
+        hari[1] = "Senin";
+        hari[2] = "Selasa";
+        hari[3] = "Rabu";
+        hari[4] = "Kamis";
+        hari[5] = "Jumat";
+        hari[6] = "Sabtu";
+
+        var bulan = 
+        ["Januari",
+        "Februari",
+        "Maret",
+        "April",
+        "Mei",
+        "Juni",
+        "Juli",
+        "Agustus",
+        "September",
+        "Oktober",
+        "November",
+        "Desember"];
+        var d = hari[today.getDay()];
+        var n = today.getDate();
+        var b = bulan[today.getMonth()];
+        var y = today.getFullYear();
+
+        //ULTAH Ike Wuwyyy
+        if (n==22&&b=="April"){
+          var ike = y-2001;
+          document.getElementById('acara').innerHTML = "Selamat ulang tahun yang ke-" + ike + " Ike Wuwyyy";
+        }
+        //NEW YEAR
+        if (n == 1 && today.getMonth() == 0){
+          document.getElementById('acara').innerHTML = "Happy New Year " + y + " Ike Wuwyyy";
+        }
+        //ANNIV
+        if (n == 10 && today.getMonth() == 6){
+          var las = y-2021;
+          document.getElementById('acara').innerHTML = "Happy Anniversary ke-" + las + " Ike Wuwyyy";
+        }
+        //PUTUS Tahun
+        if (n == 16 && today.getMonth() == 6){
+          var pts = y-2022;
+          document.getElementById('acara').innerHTML = "Kita udah putus " + las + " Tahun Ike Wuwyyy";
+        }
+        //MONTH
+        if (n == 10 && today.getMonth() != 6){
+          var awl = 0;
+          var mon ;
+          if (today.getFullYear() == 2021 && today.getMonth() > 6){
+            awl = -6;
+          }
+          else if (today.getFullYear() == 2022 && today.getMonth() != 6){
+            awl = 6;
+          }
+          else if (today.getFullYear() == 2023 && today.getMonth() != 6) {
+            awl = 18;
+          }
+          else if (today.getFullYear() == 2024 && today.getMonth() != 6) {
+            awl = 30;
+          }
+          else if (today.getFullYear() == 2025 && today.getMonth() != 6) {
+            awl = 42;
+          }
+          else if (today.getFullYear() == 2026 && today.getMonth() != 6) {
+            awl = 54;
+          }
+          else if (today.getFullYear() == 2027 && today.getMonth() != 6) {
+            awl = 66;
+          }
+          else if (today.getFullYear() == 2028 && today.getMonth() != 6) {
+            awl = 78;
+          }
+          else if (today.getFullYear() == 2029 && today.getMonth() != 6) {
+            awl = 90;
+          }
+          else if (today.getFullYear() == 2030 && today.getMonth() != 6) {
+            awl = 102;
+          }
+          mon = today.getMonth()+awl;
+          document.getElementById('acara').innerHTML = "Happy Monthsary ke-" + mon + " Ike Wuwyyy";
+        } 
+        //Bulan Putus
+        if (n == 16 && today.getMonth() != 6){
+          var awl = 0;
+          var mon ;
+          if (today.getFullYear() == 2022 && today.getMonth() > 6){
+            awl = -6;
+          }
+          else if (today.getFullYear() == 2023 && today.getMonth() != 6){
+            awl = 6;
+          }
+          else if (today.getFullYear() == 2024 && today.getMonth() != 6) {
+            awl = 18;
+          }
+          else if (today.getFullYear() == 2025 && today.getMonth() != 6) {
+            awl = 30;
+          }
+          else if (today.getFullYear() == 2026 && today.getMonth() != 6) {
+            awl = 42;
+          }
+          else if (today.getFullYear() == 2027 && today.getMonth() != 6) {
+            awl = 54;
+          }
+          else if (today.getFullYear() == 2028 && today.getMonth() != 6) {
+            awl = 66;
+          }
+          else if (today.getFullYear() == 2029 && today.getMonth() != 6) {
+            awl = 78;
+          }
+          else if (today.getFullYear() == 2030 && today.getMonth() != 6) {
+            awl = 90;
+          }
+          mon = today.getMonth()+awl;
+          document.getElementById('acara').innerHTML = "Kita udah putus " + mon + " Bulan Ike Wuwyyy";
+        } 
+        //SENIN Ike Wuwyyy
+        if (H<3&&d=="Senin"){
+          txt='Oyasumii Ike Wuwyyy';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if (H<5&&d=="Senin"){
+          txt='Bobo Ike Wuwyyy cepetann -,-';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<9&&d=="Senin"){
+          txt='Selamat Pagi Ike Wuwyyy, Semangat Kuliah Paginya dan Jangan Lupa Sarapan';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<12&&d=="Senin"){
+          txt='Semangat Kelasnya Yaaa Ike Wuwyyy';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<16&&d=="Senin"){
+          txt='Selamat Siang, Tetep Semangat Yaaa';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<18&&d=="Senin"){
+          txt='Selamat Sore Ike Wuwyyy, Jangan Lupa Makan Sore Yaa';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<19&&d=="Senin"){
+          txt='Hati" dijalan yaa Ike Wuwyyy klo beli kopi atau jajan';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<23&&d=="Senin"){
+          txt='Selamat Malam Ike Wuwyyy, Jangan lupa makan malam yaa Ike Wuwyyy';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<=24&&d=="Senin"){
+          txt='Semangat Nugasnya, Jangan Lupa Bobo';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        //SELASA Ike Wuwyyy
+        if (H<3&&d=="Selasa"){
+          txt='Oyasumii Ike Wuwyyy';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if (H<5&&d=="Selasa"){
+          txt='Bobo Ike Wuwyyy cepetann -,-';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<9&&d=="Selasa"){
+          txt='Selamat Pagi Ike Wuwyyy, Semangat Kuliah Paginya dan Jangan Lupa Sarapan';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<12&&d=="Selasa"){
+          txt='Semangat Kelasnya Yaaa Ike Wuwyyy';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<16&&d=="Selasa"){
+          txt='Selamat Siang, Tetep Semangat Yaaa';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<18&&d=="Selasa"){
+          txt='Selamat Sore Ike Wuwyyy, Jangan Lupa Makan Sore Yaa';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<19&&d=="Selasa"){
+          txt='Hati" dijalan yaa Ike Wuwyyy klo beli kopi atau jajan';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<23&&d=="Selasa"){
+          txt='Selamat Malam Ike Wuwyyy, Jangan lupa makan malam yaa Ike Wuwyyy';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<=24&&d=="Selasa"){
+          txt='Semangat Nugasnya, Jangan Lupa Bobo';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        //RABU Ike Wuwyyy
+        if (H<3&&d=="Rabu"){
+          txt='Oyasumii Ike Wuwyyy';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if (H<5&&d=="Rabu"){
+          txt='Bobo Ike Wuwyyy cepetann -,-';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<9&&d=="Rabu"){
+          txt='Selamat Pagi Ike Wuwyyy, Semangat Kuliah Paginya dan Jangan Lupa Sarapan';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<12&&d=="Rabu"){
+          txt='Semangat Kelasnya Yaaa Ike Wuwyyy';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<16&&d=="Rabu"){
+          txt='Selamat Siang, Tetep Semangat Yaaa';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<18&&d=="Rabu"){
+          txt='Selamat Sore Ike Wuwyyy, Jangan Lupa Makan Sore Yaa';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<19&&d=="Rabu"){
+          txt='Hati" dijalan yaa Ike Wuwyyy klo beli kopi atau jajan';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<23&&d=="Rabu"){
+          txt='Selamat Malam Ike Wuwyyy, Jangan lupa makan malam yaa Ike Wuwyyy';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<=24&&d=="Rabu"){
+          txt='Semangat Nugasnya, Jangan Lupa Bobo';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        //KAMIS Ike Wuwyyy
+        if (H<3&&d=="Kamis"){
+          txt='Oyasumii Ike Wuwyyy';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if (H<5&&d=="Kamis"){
+          txt='Bobo Ike Wuwyyy cepetann -,-';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<9&&d=="Kamis"){
+          txt='Selamat Pagi Ike Wuwyyy, Semangat Kuliah Paginya dan Jangan Lupa Sarapan';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<12&&d=="Kamis"){
+          txt='Semangat Kelasnya Yaaa Ike Wuwyyy';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<16&&d=="Kamis"){
+          txt='Selamat Siang, Tetep Semangat Yaaa';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<18&&d=="Kamis"){
+          txt='Selamat Sore Ike Wuwyyy, Jangan Lupa Makan Sore Yaa';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<19&&d=="Kamis"){
+          txt='Hati" dijalan yaa Ike Wuwyyy klo beli kopi atau jajan';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<23&&d=="Kamis"){
+          txt='Selamat Malam Ike Wuwyyy, Jangan lupa makan malam yaa Ike Wuwyyy';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<=24&&d=="Kamis"){
+          txt='Semangat Nugasnya, Jangan Lupa Bobo';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        //JUMAT Ike Wuwyyy
+        if (H<3&&d=="Jumat"){
+          txt='Oyasumii Ike Wuwyyy';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if (H<5&&d=="Jumat"){
+          txt='Bobo Ike Wuwyyy cepetann -,-';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<9&&d=="Jumat"){
+          txt='Selamat Pagi Ike Wuwyyy, Semangat Kuliah Paginya dan Jangan Lupa Sarapan';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<12&&d=="Jumat"){
+          txt='Semangat Kelasnya Yaaa Ike Wuwyyy';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<16&&d=="Jumat"){
+          txt='Selamat Siang, Tetep Semangat Yaaa';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<18&&d=="Jumat"){
+          txt='Selamat Sore Ike Wuwyyy, Jangan Lupa Makan Sore Yaa';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<19&&d=="Jumat"){
+          txt='Hati" dijalan yaa Ike Wuwyyy klo beli kopi atau jajan';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<23&&d=="Jumat"){
+          txt='Selamat Malam Ike Wuwyyy, Jangan lupa makan malam yaa Ike Wuwyyy';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<=24&&d=="Jumat"){
+          txt='Semangat Nugasnya, Jangan Lupa Bobo';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        //SABTU Ike Wuwyyy
+        if (H<3&&d=="Sabtu"){
+          txt='Oyasumii Ike Wuwyyy';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if (H<5&&d=="Sabtu"){
+          txt='Bobo Ike Wuwyyy cepetann -,-';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<9&&d=="Sabtu"){
+          txt='Selamat Pagi Ike Wuwyyy, Jangan Lupa Sarapan';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<12&&d=="Sabtu"){
+          txt='Semangat Kelasnya Yaaa Ike Wuwyyy';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<16&&d=="Sabtu"){
+          txt='Selamat Siang, Tetep Semangat Yaaa';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<18&&d=="Sabtu"){
+          txt='Selamat Sore Ike Wuwyyy, Jangan Lupa Makan Sore Yaa';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<19&&d=="Sabtu"){
+          txt='Hati" dijalan yaa Ike Wuwyyy klo beli kopi atau jajan';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<23&&d=="Sabtu"){
+          txt='Selamat Malam Ike Wuwyyy, Jangan lupa makan malam yaa Ike Wuwyyy';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<=24&&d=="Sabtu"){
+          txt='Semangat Nugasnya, Jangan Lupa Bobo';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        //MINGGU Ike Wuwyyy
+        if (H<3&&d=="Minggu"){
+          txt='Oyasumii Ike Wuwyyy';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if (H<5&&d=="Minggu"){
+          txt='Bobo Ike Wuwyyy cepetann -,-';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<9&&d=="Minggu"){
+          txt='Selamat Pagi Ike Wuwyyy, Jangan Lupa Sarapan';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<12&&d=="Minggu"){
+          txt='Semangat Yaaa Ike Wuwyyy';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<16&&d=="Minggu"){
+          txt='Selamat Siang, Tetep Semangat Yaaa';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<18&&d=="Minggu"){
+          txt='Selamat Sore Ike Wuwyyy, Jangan Lupa Makan Sore Yaa';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<19&&d=="Minggu"){
+          txt='Hati" dijalan yaa Ike Wuwyyy klo beli kopi atau jajan';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<23&&d=="Minggu"){
+          txt='Selamat Malam Ike Wuwyyy, Jangan lupa makan malam yaa Ike Wuwyyy';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        else if(H<=24&&d=="Minggu"){
+          txt='Semangat Nugasnya, Jangan Lupa Bobo';
+          if(txt != txt2 && !starting)
+            document.getElementById("quote").innerHTML = txt;
+          txt2=txt;
+        }
+        starting=false;
+
+        // add a zero in front of numbers<10
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+        document.getElementById('tanggal').innerHTML = d + ", " + n + " " + b + " " + y;
+        t = setTimeout(function() {
+        startTime()
+        }, 500);
+      }
+      startTime();
+
+      var i = 0;
+      
+      var speed = 50;
+      
+      function typeWriter() {
+        if (i < txt.length) {
+          var o = (i/txt.length*2);
+          var o = o.toFixed(0);
+          var o2 = o-1;
+          if (o2<0)
+            o2=0;
+          var o3 = String(o);
+          var p = "translate(-50%,50%) scale("+o2+")";
+          document.getElementById("quote").innerHTML += txt.charAt(i);
+          i++;
+          $(".jam").css("opacity",o3);
+          $(".bulat").css("transform",p).css("opacity",o2);
+          setTimeout(typeWriter, speed);
+        }
+      }
+      typeWriter();
+    </script>
+
+</body>
+</html>
